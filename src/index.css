@@ -1,0 +1,44 @@
+body{
+    max-width: 1200px !important;
+    margin: auto;
+}
+
+.logo{
+    width: 40%;
+    margin: 10px;
+}
+
+.pad{
+    padding-left: 200px;
+}
+
+.nav-item{
+    padding: 0px 10px;
+}
+
+.titulo{
+    margin: 20px;
+}
+
+.imgCar{
+    width: 30px;
+}
+
+.flexRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flexAlignCenter{
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+}
+
+.ref{
+    color: rgba(0,0,0,.55);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0px 0px 0px 15px;
+}
