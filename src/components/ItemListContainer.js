@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { GetProducto } from "../data/Malabares";
+import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
 
-const ItemListContainer = ({saludo}) => {
+const ItemListContainer = (props) => {
     const [listItems, setListItems] = useState([]);
 
     useEffect(() => {
@@ -14,8 +15,11 @@ const ItemListContainer = ({saludo}) => {
     }, [])
 
     return(
-        <div>{saludo}</div>,
-        <ItemList listItems={listItems}/>
+        <div>
+            <p>{props.saludo}</p>
+            <ItemCount />
+            <ItemList listItems={listItems}/>
+        </div>
     );
 }
 
