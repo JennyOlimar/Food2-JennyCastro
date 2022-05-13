@@ -22,7 +22,7 @@ const ItemCount = () => {
                 <button onClick={()=> plusItem()} className="btn btn-secondary"><b>+</b></button>
                 <p className="textButton">{cantItem}</p>
                 <button onClick={()=> minusItem()} className="btn btn-secondary"><b>-</b></button>
-            </div>,
+            </div>
             <button className ="btn btn-outline-info buttonAgregarCarrito">Agregar al Carrito</button>
         </>
         
