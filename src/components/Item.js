@@ -1,0 +1,20 @@
+const Item = ({item}) => {
+
+    const content = item.map((card) =>
+        <div className="card" key={card.id}>
+            <h1>{card.title}</h1>
+            <img className="cardImg" src={card.pictureUrl} alt="" />
+            <p className="cardStock">{card.description}</p>
+            <button class="btn btn-outline-info cardButton">Ver detalle del producto</button>
+            <h1 className="cardStock fontBlue">$ {card.price}</h1>
+            <p className="cardStock">Stock disponible: {card.stock}</p>
+        </div>
+    );
+
+    
+    return(
+        <div className="cardFlex">{content}</div>
+    );
+}
+
+export default Item;

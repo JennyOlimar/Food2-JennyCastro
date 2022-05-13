@@ -10,23 +10,23 @@ const Navbar = () => {
             <CarWidjet />
         </div>
         
-        <nav class="pad navbar navbar-expand-lg navbar-light bg-light">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./ItemListContainer.js">Nosotros</a>
+        <nav className="pad navbar navbar-expand-lg navbar-light bg-light">
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav mr-auto">
+                    <li className="nav-item active">
+                        <a className="nav-link" href="./ItemListContainer.js">Nosotros</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./ItemListContainer.js">Frutas</a>
+                    <li className="nav-item">
+                        <a className="nav-link" href="./ItemListContainer.js">Frutas</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./ItemListContainer.js">Vegetales</a>
+                    <li className="nav-item">
+                        <a className="nav-link" href="./ItemListContainer.js">Vegetales</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./ItemListContainer.js">Carnes</a>
+                    <li className="nav-item">
+                        <a className="nav-link" href="./ItemListContainer.js">Carnes</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./ItemListContainer.js">Contacto</a>
+                    <li className="nav-item">
+                        <a className="nav-link" href="./ItemListContainer.js">Contacto</a>
                     </li>
                 </ul>
             </div>
