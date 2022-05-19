@@ -22,6 +22,7 @@ body{
 
 .imgCar{
     width: 30px;
+    margin-right: 15px;
 }
 
 .flexRow{
@@ -75,7 +76,7 @@ body{
     flex-direction: row;
     display: flex;
     justify-content: center;
-    margin-bottom: 15px;
+    margin: 15px;
 }
 
 .textButton{
@@ -91,4 +92,9 @@ body{
     display: flex;
     justify-content: center;
     margin: auto;
+}
+
+.btn-secondary {
+    background-color: #6c757d8f !important;
+    border-color: #6c757d8f !important;
 }

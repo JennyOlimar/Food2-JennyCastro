@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { GetProducto } from "../data/Malabares";
-import ItemCount from "./ItemCount";
-import ItemList from "./ItemList";
+import ItemList from "../components/ItemList";
 
 const ItemListContainer = (props) => {
     const [listItems, setListItems] = useState([]);
@@ -17,7 +16,6 @@ const ItemListContainer = (props) => {
     return(
         <div>
             <p>{props.saludo}</p>
-            <ItemCount />
             <ItemList listItems={listItems}/>
         </div>
     );
