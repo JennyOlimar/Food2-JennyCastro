@@ -29,14 +29,5 @@ export const GetArticulo = () => new Promise( (resolve, reject) => {
             pictureUrl: 'https://www.firetoys.eu/media/catalog/product/cache/5d6d96cb5e22bab60cddeb679efa32bd/m/r/mrb-beach-1kg-menu_1.jpg',
             stock: 7
         },
-        {
-            id: 2,
-            title: 'Balls',
-            description: 'Mr. Babbache ball',
-            price: 20,
-            pictureUrl: 'https://www.firetoys.eu/media/catalog/product/cache/5d6d96cb5e22bab60cddeb679efa32bd/m/r/mrb-beach-1kg-menu_1.jpg',
-            stock: 9
-        }
     ]), 1000);
 });
-

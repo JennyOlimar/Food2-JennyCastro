@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { GetProducto } from "../data/Malabares";
 import ItemList from "../components/ItemList";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = (props) => {
+    const { id } = useParams();
     const [listItems, setListItems] = useState([]);
 
     useEffect(() => {
@@ -11,7 +13,7 @@ const ItemListContainer = (props) => {
             setListItems(productos);
         }
         getData();
-    }, [])
+    }, [id])
 
     return(
         <div>

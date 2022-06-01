@@ -9,7 +9,7 @@ const RoutesConfig = () => (
         <Routes>
             <Route element={<Layout />}>
                 <Route path="/" element={<ItemListContainer saludo='Bienvenido'/>}/>
-                <Route path="/categoria/:id" element={<ItemListContainer />}/>
+                <Route path="/category/:id" element={<ItemListContainer />}/>
                 <Route path="/item/:id" element={<ItemDetailContainer />}/>
                 <Route path="*" element={<div>404</div>}/>
             </Route>
