@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ItemCount = () => {
+const ItemCount = ({onAdd}) => {
 
     const [cantItem, setCantItem] = useState(1);
 
@@ -23,7 +23,7 @@ const ItemCount = () => {
                 <p className="textButton">{cantItem}</p>
                 <button onClick={()=> minusItem()} className="btn btn-secondary"><b>-</b></button>
             </div>
-            <button className ="btn btn-outline-info buttonAgregarCarrito">Agregar al Carrito</button>
+            <button className ="btn btn-outline-info buttonAgregarCarrito" onClick={() => onAdd()}>Agregar al Carrito</button>
         </>
         
     );
