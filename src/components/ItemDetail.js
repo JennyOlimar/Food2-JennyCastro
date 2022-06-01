@@ -1,13 +1,12 @@
-import ItemCount from "../components/ItemCount";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
-const ItemDetail = ({item}) => {
-    const [hideItem, sethideItem] = useState(false);
+import ItemCount from "../components/ItemCount";
+import { AppContext } from "../app/CartContext";
 
-    const hideItemCount = () => {
-        sethideItem(true);
-    }
+const ItemDetail = ({item}) => {
+    const [count, setCount] = useState(0);
+    const [items, addItem, removeItem, clear, isInCart] = useContext(AppContext);
 
     return(
         <div className="cardFlex">{item && item.map(articulo => 
@@ -16,13 +15,16 @@ const ItemDetail = ({item}) => {
                 <h1>{articulo.title}</h1>
                 <img className="cardImg" src={articulo.pictureUrl} alt="" />
                 <p className="cardStock">{articulo.description}</p>
-                <div>
-                    {hideItem === false && (<ItemCount onAdd={hideItemCount}/>)}
-                </div>
-                <div>
-                    {hideItem === true && (<button className ="btn btn-outline-info buttonTerminarCompra"><Link to='/cart'>Terminar mi compra</Link></button>)}
-                </div>
-                
+                {
+                    count === 0 ?
+                    <ItemCount onAdd={(cant) => setCount(cant)}/>
+                    : <div>
+                        <button className ="btn btn-outline-info buttonTerminarCompra" onClick={() => addItem(item, count)}>Comprar</button>
+                        <button className ="btn btn-outline-info buttonTerminarCompra">
+                            <Link to='/cart'>Terminar mi compra</Link>
+                        </button>
+                    </div>
+                }
             </div>
         )}</div>
     );
