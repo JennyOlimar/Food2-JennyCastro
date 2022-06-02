@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import { GetArticulo } from "../data/Malabares";
 import ItemDetail from "../components/ItemDetail";
+import { useParams } from "react-router-dom";
+import { getItemById } from "../app/api";
 
 const ItemDetailContainer = () => {
+    const { id } = useParams();
     const [Item, setItem] = useState([]);
 
     useEffect(() => {
-        const getItem = async () => {
-            const producto = await GetArticulo();
-            setItem(producto);
-        }
-        getItem();
+        getItemById(id).then(resp => {
+            setItem(resp);
+        });
     }, [])
 
     return(

@@ -9,24 +9,24 @@ const ItemDetail = ({item}) => {
     const [items, addItem, removeItem, clear, isInCart] = useContext(AppContext);
 
     return(
-        <div className="cardFlex">{item && item.map(articulo => 
-            <div className="card" key={articulo.id}>
-                <span>Información detallada</span>
-                <h1>{articulo.title}</h1>
-                <img className="cardImg" src={articulo.pictureUrl} alt="" />
-                <p className="cardStock">{articulo.description}</p>
-                {
-                    count === 0 ?
-                    <ItemCount onAdd={(cant) => setCount(cant)}/>
-                    : <div>
-                        <button className ="btn btn-outline-info buttonTerminarCompra" onClick={() => addItem(item, count)}>Comprar</button>
-                        <button className ="btn btn-outline-info buttonTerminarCompra">
-                            <Link to='/cart'>Terminar mi compra</Link>
-                        </button>
-                    </div>
-                }
-            </div>
-        )}</div>
+    <div className="cardFlex">
+        <div className="card">
+            <span>Información detallada</span>
+            <h1>{item.title}</h1>
+            <img className="cardImg" src={item.pictureUrl} alt="" />
+            <p className="cardStock">{item.description}</p>
+            {
+                count === 0 ?
+                <ItemCount onAdd={(cant) => setCount(cant)}/>
+                : <div>
+                    <button className ="btn btn-outline-info buttonTerminarCompra" onClick={() => addItem(item, count)}>Comprar</button>
+                    <button className ="btn btn-outline-info buttonTerminarCompra">
+                        <Link to='/cart'>Terminar mi compra</Link>
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
     );
 }
 

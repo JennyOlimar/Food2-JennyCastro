@@ -46,6 +46,7 @@ body{
 
 .cardImg{
     width: 200px;
+    margin: auto;
 }
 
 .cardFlex{
