@@ -1,19 +1,15 @@
-import { useEffect, useState, useContext } from "react";
-import { getItems } from "../app/api";
+import { useEffect, useState } from "react";
+import { getItemByCategory, getItems } from "../app/items-firebase";
 import ItemList from "../components/ItemList";
 import { useParams } from "react-router-dom";
-import { AppContext } from "../app/CartContext";
 
 const ItemListContainer = (props) => {
     const { id } = useParams();
     const [listItems, setListItems] = useState([]);
-    const [items, addItem, removeItem, clear, isInCart] = useContext(AppContext);
 
     useEffect(() => {
-        getItems().then(resp => {
-            setListItems(resp);
-        });
-        clear();
+        id === undefined ? getItems().then(resp => { setListItems(resp); }) :
+        getItemByCategory(id).then(resp => { setListItems(resp); })
     }, [id])
 
     return(

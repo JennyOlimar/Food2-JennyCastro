@@ -1,5 +1,4 @@
-import { async } from "@firebase/util";
-import { collection, getDocs, query, doc, getDoc, addDoc, deleteDoc, updateDoc, setDoc, where, limit } from "firebase/firestore";
+import { collection, getDocs, query, doc, getDoc, addDoc, deleteDoc, updateDoc, where, limit } from "firebase/firestore";
 import { db } from './firebase';
 
 const collectionName = 'items';
@@ -36,6 +35,13 @@ export const getItemByName = async (name) => {
     const result = await getDocs(query(itemsCollection, where('nombre', '==', name), limit(1)));
     const doc = result.docs[0];
     return result.size !== 0 ? { ...doc.data(), id: doc.id} : {};
+}
+
+export const getItemByCategory = async (id) => {
+    const result = await getDocs(query(itemsCollection, where('categoryId', '==', parseInt(id))));
+    return result.docs.map(doc => {
+        return { ...doc.data(), id: doc.id };
+    });
 }
 
 export const getItemById = async (id) => {

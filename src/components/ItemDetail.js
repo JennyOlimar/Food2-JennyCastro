@@ -6,7 +6,7 @@ import { AppContext } from "../app/CartContext";
 
 const ItemDetail = ({item}) => {
     const [count, setCount] = useState(0);
-    const [items, addItem, removeItem, clear, isInCart] = useContext(AppContext);
+    const [, addItem, , , ] = useContext(AppContext);
 
     return(
     <div className="cardFlex">
@@ -19,7 +19,7 @@ const ItemDetail = ({item}) => {
                 count === 0 ?
                 <ItemCount onAdd={(cant) => setCount(cant)}/>
                 : <div>
-                    <button className ="btn btn-outline-info buttonTerminarCompra" onClick={() => addItem(item, count)}>Comprar</button>
+                    <button className ="btn btn-outline-info buttonTerminarCompra" onClick={() => addItem(item, count)}>Guardar</button>
                     <button className ="btn btn-outline-info buttonTerminarCompra">
                         <Link to='/cart'>Terminar mi compra</Link>
                     </button>

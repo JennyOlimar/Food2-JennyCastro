@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "../components/ItemDetail";
 import { useParams } from "react-router-dom";
-import { getItemById } from "../app/api";
+import { getItemById } from "../app/items-firebase";
 
 const ItemDetailContainer = () => {
     const { id } = useParams();
@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
         getItemById(id).then(resp => {
             setItem(resp);
         });
-    }, [])
+    }, [id])
 
     return(
         <div>
